@@ -7,23 +7,28 @@ const server = http.createServer((req, res) => {
   let urlName = req.url;
   if (urlName == "/") {
     
-    let core = '"segaMD"';
+    /*let core = '"segaMD"';
     let gameName = '"Flicky"';
-    let gameUrl = '"Flicky.md"';
-    /*let core = '"gb"';
+    let gameUrl = '"Flicky.md"';*/
+    let core = '"gb"';
     let gameName = '"Pokemon - Red"'
-    let gameUrl = '"Pokemon Red.gb"'*/
+    let gameUrl = '"PokemonRed.gb"'
     let htmlData = baseHtml.replace('"core"', core);
     htmlData = htmlData.replace('"gameName"', gameName);
     htmlData = htmlData.replace('"gameUrl"', gameUrl);
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(htmlData);
   } else if (urlName == "/Flicky.md") {
-    readFile("./Flicky.md").then((data) => {
+    readFile("./ROMs/Flicky.md").then((data) => {
       res.writeHead(200, { "Content-Type": "text/plain" });
       res.end(data);
     });
-  } else {
+  } else if (urlName == "/PokemonRed.gb") {
+    readFile("./ROMs/PokemonRed.gb").then((data) => {
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end(data);
+    });
+  }else {
     console.log(req.url);
     res.end();
   }
