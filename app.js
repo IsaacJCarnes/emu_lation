@@ -79,7 +79,7 @@ const loadGame = () => {
   window.EJS_pathtodata = "data/";
   window.EJS_core = core;
   window.EJS_gameName = gameName;
-  window.EJS_gameUrl = `https://game-emu-lation-cabinet.on.drv.tw/games/ROMs/${gameUrl}`;
+  window.EJS_gameUrl = `ROMs/${gameUrl}`;
 
   script.src = "data/loader.js";
   document.body.appendChild(script);
