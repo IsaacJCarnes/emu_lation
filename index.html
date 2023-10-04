@@ -1,20 +1,15 @@
 <html>
     <head>
-        <!--HTML file auto generated using EmulatorJS codehelper-->
     </head>
     <body>
-        <div style="width:640px;height:480px;max-width:100%">
-            <div id="game"></div>
-        </div>
-        <script>
-            EJS_player = "#game";
-            EJS_core = "core";
-            EJS_gameName = "gameName";
-            EJS_color = "#ff0000";
-            EJS_startOnLoaded = false;
-            EJS_pathtodata = "https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/";
-            EJS_gameUrl = "gameUrl";
-        </script>
-        <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
-    </body>
+        <header><h1>Emu-Lation</h1><div><button onclick="window.location.assign(`.`)">Home</button><button onclick="randomGame()">Random Game</button></div></header>
+        <button onclick="loadPage('Tetris')">Tetris</button>
+        <button onclick="loadPage('PokemonRed')">Pokemon Red</button>
+        <button onclick="loadPage('Flicky')">Flicky</button>
+        <button onclick="loadPage('PokemonMysteryDungeon')">Pokemon Mystery Dungeon</button>
+        <button onclick="loadPage('MarioLuigi-BowsersInsideStory')">Mario & Luigi - Bowser's Inside Story</button>
+        <button onclick="loadPage('BigBangMini')">Big Bang Mini</button>
+        <button onclick="loadPage('FossilFighters')">Fossil Fighters</button>
+    </body>    
+    <script src="app.js"></script>
 </html>
