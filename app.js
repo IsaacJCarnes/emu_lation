@@ -3,11 +3,19 @@ const fs = require("fs");
 
 const hostname = "localhost";
 const port = 3000;
-const availableGames = ["/Flicky.md", "/PokemonRed.gb", "/BigBangMini.nds"];
+const availableGames = [
+  "/Flicky.md",
+  "/PokemonRed.gb",
+  "/BigBangMini.nds",
+  "/FossilFighters.nds",
+  "/Tetris.gb",
+  "/MarioLuigi-BowsersInsideStory.nds",
+  "/PokemonMysteryDungeon.nds",
+];
 const server = http.createServer((req, res) => {
   let urlName = req.url;
   if (urlName == "/") {
-    let htmlData = loadGame(availableGames[0]);
+    let htmlData = loadGame(availableGames[6]);
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(htmlData);
   } else if (availableGames.includes(urlName)) {
@@ -27,19 +35,40 @@ const loadGame = (urlName) => {
   let gameUrl = "";
   switch (urlName) {
     case availableGames[0]:
-      core = '"segaMD"';
-      gameName = '"Flicky"';
-      gameUrl = '"Flicky.md"';
+      core = `"segaMD"`;
+      gameName = `"Flicky"`;
+      gameUrl = `"Flicky.md"`;
+      console.log("flicky");
       break;
     case availableGames[1]:
-      core = '"gb"';
-      gameName = '"Pokemon - Red"';
-      gameUrl = '"PokemonRed.gb"';
+      core = `"gb"`;
+      gameName = `"PokemonRed"`;
+      gameUrl = `"PokemonRed.gb"`;
       break;
     case availableGames[2]:
-      core = '"nds"';
-      gameName = '"Big Bang Mini"';
-      gameUrl = '"BigBangMini.nds"';
+      core = `"nds"`;
+      gameName = `"BigBangMini"`;
+      gameUrl = `"BigBangMini.nds"`;
+      break;
+    case availableGames[3]:
+      core = `"nds"`;
+      gameName = `"FossilFighters"`;
+      gameUrl = `"FossilFighters.nds"`;
+      break;
+    case availableGames[4]:
+      core = `"gb"`;
+      gameName = `"Tetris"`;
+      gameUrl = `"Tetris.gb"`;
+      break;
+    case availableGames[5]:
+      core = `"nds"`;
+      gameName = `"MarioLuigi-BowsersInsideStory"`;
+      gameUrl = `"MarioLuigi-BowsersInsideStory.nds"`;
+      break;
+    case availableGames[6]:
+      core = `"nds"`;
+      gameName = `"PokemonMysteryDungeon"`;
+      gameUrl = `"PokemonMysteryDungeon.nds"`;
       break;
   }
   let htmlData = baseHtml.replace('"core"', core);
