@@ -8,11 +8,25 @@ h1, h3{
     color: #FCE694
 }
 
+#logoBtn{
+    width: 20px;
+    height: 20px;
+    border: unset;
+    cursor: pointer;
+}
+
+#logoBtn img{
+    width: 20px;
+    height: 20px;
+    filter: invert(0.9);
+}
+
 button{
     background-color: unset;
     color: #F6FEAA;
     border: 1px solid #FCE694;
     border-radius: 0.2em;
+    cursor: pointer;
 }
 #instructions{
     grid-column: 3/4;

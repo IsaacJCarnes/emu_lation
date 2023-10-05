@@ -1,23 +1,36 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header><h1>Emu-Lation</h1><div><button onclick="randomGame()">Random Game</button></div></header>
-        <h3>Mobile Compatible</h3>
-        <div><button onclick="loadPage('Tetris')">Tetris</button>
-        <button onclick="loadPage('PokemonRed')">Pokemon Red</button>
-        <button onclick="loadPage('Flicky')">Flicky</button></div>
-        <h3>Other Games</h3>
-        <div>
-        <button onclick="loadPage('PokemonMysteryDungeon')">Pokemon Mystery Dungeon</button>
-        <button onclick="loadPage('MarioLuigi-BowsersInsideStory')">Mario & Luigi - Bowser's Inside Story</button>
-        <button onclick="loadPage('BigBangMini')">Big Bang Mini</button>
-        <button onclick="loadPage('FossilFighters')">Fossil Fighters</button>
-        <button onclick="loadPage('DonkeyKongCountry')">Donkey Kong Country</button>
-        <button onclick="loadPage('CookingMama')">Cooking Mama</button>
-        <button onclick="loadPage('StrawberryShortcake-TheFourSeasonsCake')">Strawberry Shortcake - The Four Seasons Cake</button>
-        </div>
-    </body>    
-    <script src="app.js"></script>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Emu-Lation <button id="logoBtn" onclick="window.open('https://github.com/IsaacJCarnes/emu_lation', '_blank')"><img src="resources/githubLogo.png"/></button> </h1>
+      <div><button onclick="randomGame()">Random Game</button></div>
+    </header>
+    <h3>Mobile Compatible</h3>
+    <div>
+      <button onclick="loadPage('Tetris')">Tetris</button>
+      <button onclick="loadPage('PokemonRed')">Pokemon Red</button>
+      <button onclick="loadPage('Flicky')">Flicky</button>
+    </div>
+    <h3>Other Games</h3>
+    <div>
+      <button onclick="loadPage('PokemonMysteryDungeon')">
+        Pokemon Mystery Dungeon
+      </button>
+      <button onclick="loadPage('MarioLuigi-BowsersInsideStory')">
+        Mario & Luigi - Bowser's Inside Story
+      </button>
+      <button onclick="loadPage('BigBangMini')">Big Bang Mini</button>
+      <button onclick="loadPage('FossilFighters')">Fossil Fighters</button>
+      <button onclick="loadPage('DonkeyKongCountry')">
+        Donkey Kong Country
+      </button>
+      <button onclick="loadPage('CookingMama')">Cooking Mama</button>
+      <button onclick="loadPage('StrawberryShortcake-TheFourSeasonsCake')">
+        Strawberry Shortcake - The Four Seasons Cake
+      </button>
+    </div>
+  </body>
+  <script src="app.js"></script>
 </html>
