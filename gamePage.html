@@ -1,9 +1,19 @@
 <html>
-    <head>
-    </head>
-    <body>
-        <header><h1>Emu-Lation</h1><div><button onclick="window.location.assign(`.`)">Home</button><button onclick="randomGame()">Random Game</button></div></header>
-    </body>    
-    <script src="app.js"></script>
-    <script>loadGame()</script>
+  <head> 
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Emu-Lation</h1>
+      <div>
+        <button onclick="window.location.assign(`.`)">Home</button>
+        <button onclick="randomGame()">Random Game</button>
+      </div>
+    </header>
+    <h3 id="gameTitle"></h3>
+  </body>
+  <script src="app.js"></script>
+  <script>
+    loadGame();
+  </script>
 </html>

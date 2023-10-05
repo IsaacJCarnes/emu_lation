@@ -6,32 +6,34 @@ const availableGames = [
   "Tetris",
   "MarioLuigi-BowsersInsideStory",
   "PokemonMysteryDungeon",
+  "DonkeyKongCountry",
+  "StrawberryShortcake-TheFourSeasonsCake",
+  "CookingMama"
 ];
 const randomGame = () => {
-  loadPage(availableGames[Math.floor(Math.random() * availableGames.length)])
-}
+  loadPage(availableGames[Math.floor(Math.random() * availableGames.length)]);
+};
 
 const loadPage = (currentGame) => {
   switch (currentGame) {
     case availableGames[0]:
       core = "segaMD";
       gameName = "Flicky";
-      gameUrl = 'Flicky.md';
-      console.log("flicky")
+      gameUrl = "Flicky.md";
       break;
     case availableGames[1]:
       core = "gb";
-      gameName = "PokemonRed";
+      gameName = "Pokemon Red";
       gameUrl = "PokemonRed.gb";
       break;
     case availableGames[2]:
       core = "nds";
-      gameName = "BigBangMini";
+      gameName = "Big Bang Mini";
       gameUrl = "BigBangMini.nds";
       break;
     case availableGames[3]:
       core = "nds";
-      gameName = "FossilFighters";
+      gameName = "Fossil Fighters";
       gameUrl = "FossilFighters.nds";
       break;
     case availableGames[4]:
@@ -41,37 +43,66 @@ const loadPage = (currentGame) => {
       break;
     case availableGames[5]:
       core = "nds";
-      gameName = "MarioLuigi-BowsersInsideStory";
+      gameName = "Mario and Luigi - Bowser's Inside Story";
       gameUrl = `MarioLuigi-BowsersInsideStory.nds`;
       break;
     case availableGames[6]:
       core = "nds";
-      gameName = "PokemonMysteryDungeon";
-      gameUrl = 'PokemonMysteryDungeon.nds';
+      gameName = "Pokemon Mystery Dungeon";
+      gameUrl = "PokemonMysteryDungeon.nds";
+      break;
+    case availableGames[7]:
+      core = "snes";
+      gameName = "Donkey Kong Country";
+      gameUrl = "DonkeyKongCountry.smc";
+      break;
+    case availableGames[8]:
+      core = "nds";
+      gameName = "Strawberry Shortcake - The Four Seasons Cake";
+      gameUrl = "StrawberryShortcake-TheFourSeasonsCake.nds";
+      break;
+    case availableGames[9]:
+      core = "nds";
+      gameName = "Cooking Mama";
+      gameUrl = "CookingMama.nds";
       break;
   }
-  window.location.assign(`./gamePage.html?core=${core}&gameName=${gameName}&gameUrl=${gameUrl}`);
-}
+  window.location.assign(
+    `./gamePage.html?core=${core}&gameName=${gameName}&gameUrl=${gameUrl}`
+  );
+};
 
 const loadGame = () => {
+  var gameTitle = document.getElementById("gameTitle");
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
-  var core = urlParams.get('core');
-  var gameName = urlParams.get('gameName');
-  var gameUrl = urlParams.get('gameUrl');
+  var core = urlParams.get("core");
+  var gameName = urlParams.get("gameName");
+  var gameUrl = urlParams.get("gameUrl");
+  gameTitle.innerText = gameName;
 
-  console.log("hello " + urlParams.get('core') + " " + urlParams.get('gameName')  + " " + urlParams.get('gameUrl') )
+  console.log(
+    "hello " +
+      urlParams.get("core") +
+      " " +
+      urlParams.get("gameName") +
+      " " +
+      urlParams.get("gameUrl")
+  );
 
+  const parent = document.createElement("div");
   const div = document.createElement("div");
   const sub = document.createElement("div");
   const script = document.createElement("script");
 
-  sub.id = "game"
-  div.id = "display"
-  div.style = "width:640px;height:480px;max-width:100%";
+  sub.id = "game";
+  div.id = "display";
+  div.style = "width:80vmin;height:60vmin;display:flex;";
   div.appendChild(sub);
-  document.body.appendChild(div);
+  parent.style = "width:100%;height:85%;display:flex;justify-content: center;";
+  parent.appendChild(div);
+  document.body.appendChild(parent);
 
   window.EJS_player = "#game";
   window.EJS_color = "#ff0000";

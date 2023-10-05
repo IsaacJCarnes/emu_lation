@@ -1,0 +1,16 @@
+html{
+    width: 100%;
+    height: 100%;
+    background-color: #373737
+}
+
+h1, h3{
+    color: #FCE694
+}
+
+button{
+    background-color: unset;
+    color: #F6FEAA;
+    border: 1px solid #FCE694;
+    border-radius: 0.2em;
+}
