@@ -95,13 +95,14 @@ const loadGame = () => {
   const div = document.createElement("div");
   const sub = document.createElement("div");
   const script = document.createElement("script");
-
+  const instructions = createInstructions();
   sub.id = "game";
   div.id = "display";
-  div.style = "width:80vmin;height:60vmin;display:flex;";
+  div.style = "grid-column:1/2; grid-row:1; width:80vmin; height:60vmin; display:flex;";
   div.appendChild(sub);
-  parent.style = "width:100%;height:85%;display:flex;justify-content: center;";
+  parent.style = "width:100%; height:85%; display:grid; justify-content: center;";
   parent.appendChild(div);
+  parent.appendChild(instructions);
   document.body.appendChild(parent);
 
   window.EJS_player = "#game";
@@ -115,6 +116,19 @@ const loadGame = () => {
   script.src = "data/loader.js";
   document.body.appendChild(script);
 };
+
+const createInstructions = () => {
+  const instructions = document.createElement("div");
+  instructions.id = "instructions";
+  const controlsHeading = document.createElement("h4");
+  controlsHeading.innerText = "Controls";
+  const controlsText = document.createElement("div");
+  controlsText.innerText = "A: z\nB: x\nX: a\nY: s\nSELECT: v\nSTART: Enter\nUp, Down, Left, Right: Arrow Keys\nL: q\nR: e\nOther controls can be set within the emulator."
+  instructions.appendChild(controlsHeading);
+  instructions.appendChild(controlsText);
+  
+  return instructions;
+}
 /*const http = require("http");
 const fs = require("fs");
 

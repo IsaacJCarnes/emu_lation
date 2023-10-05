@@ -14,3 +14,21 @@ button{
     border: 1px solid #FCE694;
     border-radius: 0.2em;
 }
+#instructions{
+    grid-column: 3/4;
+    grid-row: 1/1; 
+    width: 10vmin; 
+    display: flex; 
+    justify-content: flex-end; 
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+#instructions h4{
+    color: #FCE694;
+    text-decoration: underline;
+}
+#instructions div{
+    color: #FCE694;
+    width: inherit;
+}
